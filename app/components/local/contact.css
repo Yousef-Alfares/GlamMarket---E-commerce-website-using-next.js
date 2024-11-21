@@ -1,0 +1,17 @@
+.input {
+  input,
+  textarea {
+    outline: none auto 1px;
+  }
+
+  input:valid ~ label,
+  input:focus ~ label,
+  input:user-invalid ~ label,
+  textarea:user-valid ~ label,
+  textarea:user-invalid ~ label,
+  textarea:focus ~ label {
+    font-size: 12px;
+    top: 0;
+    padding-inline: 5px;
+  }
+}

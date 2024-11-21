@@ -1,0 +1,38 @@
+.products .swiper {
+  width: 100%;
+  overflow: visible;
+}
+
+.products .swiper-slide {
+  /* text-align: center; */
+  font-size: 18px;
+}
+
+.products .swiper-slide img {
+  display: block;
+
+  object-fit: contain;
+}
+
+.products .swiper-button-next {
+  right: -60px;
+}
+
+.products .swiper-button-prev {
+  left: -60px !important;
+}
+
+.products .swiper-pagination-horizontal {
+  bottom: -40px !important;
+}
+
+.products .swiper-pagination-bullet-active {
+  background-color: #f59e0b;
+}
+
+@media (max-width: 768px) {
+  .products .swiper-button-prev,
+  .products .swiper-button-next {
+    display: none;
+  }
+}
