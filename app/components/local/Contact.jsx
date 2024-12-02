@@ -14,7 +14,7 @@ const contacts = [
   {
     image: {
       src: CallIcon,
-      alt: "",
+      alt: "Call icon",
     },
     title: "Phone Number",
     description: "+963 987 654 321",
@@ -22,7 +22,7 @@ const contacts = [
   {
     image: {
       src: EmailIcon,
-      alt: "",
+      alt: "Email Icon",
     },
     title: "Email",
     description: "contact@GlamMarket.com",
@@ -30,7 +30,7 @@ const contacts = [
   {
     image: {
       src: LocationIcon,
-      alt: "",
+      alt: "Location icon",
     },
     title: "Location",
     description: "Damascus, Syria",

@@ -2,7 +2,6 @@
 import Button from "@/app/elements/Button";
 import Image from "next/image";
 import OnlineShopping from "@/public/images/Online shopping site.svg";
-import Link from "@/public/icons/Link.svg";
 import Down from "@/public/icons/Down.svg";
 import LinkIcon from "@/public/icons/LinkIcon";
 import { useRouter } from "next/navigation";
@@ -40,6 +39,7 @@ const Hero = () => {
           </div>
         </div>
         <Image
+          priority
           alt="Online shopping image"
           src={OnlineShopping}
           className="max-w-[80%] mx-auto md:m-0 w-[75%] md:w-[50%] sm:hidden lg:block md:max-w-[100%]"

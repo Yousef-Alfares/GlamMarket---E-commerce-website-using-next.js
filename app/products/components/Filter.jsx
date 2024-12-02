@@ -64,9 +64,10 @@ const Filter = ({ filterByRates, filterByCategories }) => {
     <div className="filter px-4 py-2 rounded-[20px] bg-light-background-90 backdrop-blur-lg absolute shadow-2xl w-60">
       <div className="flex flex-col">
         <h3 className="font-medium mb-[7px]">Categories</h3>
-        {categories.map((category) => (
+        {categories.map((category, index) => (
           <div
-            class="flex items-center mb-4 cursor-pointer hover:opacity-80"
+            key={index}
+            className="flex items-center mb-4 cursor-pointer hover:opacity-80"
             onClick={() => {
               setCategories(
                 handleCheckedFilters(category.name.toLowerCase(), categories)
@@ -89,9 +90,10 @@ const Filter = ({ filterByRates, filterByCategories }) => {
           </div>
         ))}
         <h3 className="font-medium mb-[7px]">Reviews</h3>
-        {rates.map((rate) => (
+        {rates.map((rate, index) => (
           <div
-            class="flex items-center mb-4 cursor-pointer hover:opacity-80"
+            key={index}
+            className="flex items-center mb-4 cursor-pointer hover:opacity-80"
             onClick={() => {
               setRates(handleCheckedFilters(rate.name, rates));
             }}

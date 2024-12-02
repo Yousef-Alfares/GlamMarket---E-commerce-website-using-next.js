@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Star from "@/public/icons/star.svg";
+import Star from "@/public/icons/Star.svg";
 import Like from "@/public/icons/Like-1.svg";
 import Button from "@/app/elements/Button";
 import Image from "next/image";
