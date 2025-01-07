@@ -6,7 +6,7 @@ const { createContext, useReducer } = require("react");
 const cookie = Cookie();
 
 const initialState = {
-  user: JSON.parse(localStorage.getItem("userInfo")) || null,
+  user: typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userInfo")) || null : null,
   token: cookie.get("token") || null,
   error: {},
 };

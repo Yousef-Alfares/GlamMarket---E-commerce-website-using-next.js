@@ -4,7 +4,7 @@ const { useReducer, createContext } = require("react");
 export const FavoritesContext = createContext([]);
 
 const initialState = {
-  favorites: JSON.parse(localStorage.getItem("favorites")) || [],
+  favorites: typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("favorites")) || [] : [],
 };
 
 const reducer = (state, action) => {

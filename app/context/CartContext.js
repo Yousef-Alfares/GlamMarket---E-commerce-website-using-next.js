@@ -1,19 +1,10 @@
 "use client";
-const { useReducer, createContext, useState, useEffect } = require("react");
+import { useReducer, createContext } from "react";
 
 export const CartContext = createContext([]);
 
 const initialState = {
-  cart: JSON.parse(localStorage.getItem("cart")) || [],
-};
-
-const countProductQuantity = (newProduct, oldProducts) => {
-  oldProducts.map((product) => {
-    if (product.id == newProduct.id) {
-      product.quantity += newProduct.quantity;
-    }
-  });
-  return oldProducts;
+  cart: typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("cart")) || [] : [],
 };
 
 const reducer = (state, action) => {
