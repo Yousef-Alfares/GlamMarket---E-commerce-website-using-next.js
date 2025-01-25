@@ -1,5 +1,5 @@
 "use client";
-import Star from "@/public/icons/star.svg";
+// import Star from "@/public/icons/star.svg";
 import Close from "@/public/icons/Close.svg";
 import Image from "next/image";
 import Button from "@/app/elements/Button";
@@ -58,7 +58,7 @@ const Cart = () => {
                     {cart.title}
                   </h2>
                   <div className="flex gap-1">
-                    <Image src={Star} alt="Star icon" />
+                    <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
                     <span className="text-base font-medium text-gray-text-800">
                       {cart.rating}
                     </span>

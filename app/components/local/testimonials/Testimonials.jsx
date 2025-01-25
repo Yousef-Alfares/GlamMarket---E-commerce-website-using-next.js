@@ -13,7 +13,7 @@ import "./testimonial.css";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
-import Star from "@/public/icons/star.svg";
+// import Star from "@/public/icons/star.svg";
 import Image1 from "@/public/images/Ellipse 74 (1).png";
 
 const Testmonials = () => {
@@ -43,9 +43,9 @@ const Testmonials = () => {
           <SwiperSlide className="rounded-2xl bg-light-background max-w-[450px]">
             <div className="flex flex-col gap-4 p-4">
               <div className="flex justify-start items-center gap-3">
-                <Image src={Star} alt="" className="w-5" />
-                <Image src={Star} alt="" className="w-5" />
-                <Image src={Star} alt="" className="w-5" />
+                <Image src={"/icons/star.svg"} width={100} height={100} alt="Star Icon" className="w-5 h-auto" />
+                <Image src={"/icons/star.svg"} width={100} height={100} alt="Star Icon" className="w-5 h-auto" />
+                <Image src={"/icons/star.svg"} width={100} height={100} alt="Star Icon" className="w-5 h-auto" />
               </div>
               <p className="text-gray-text text-base font-light">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
@@ -68,9 +68,9 @@ const Testmonials = () => {
           <SwiperSlide className="rounded-2xl bg-light-background max-w-[450px]">
             <div className="flex flex-col gap-4 p-4">
               <div className="flex justify-start items-center gap-3">
-                <Image src={Star} alt="" className="w-5" />
-                <Image src={Star} alt="" className="w-5" />
-                <Image src={Star} alt="" className="w-5" />
+                <Image src={"/icons/star.svg"} width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
+                <Image src={"/icons/star.svg"} width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
+                <Image src={"/icons/star.svg"} width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
               </div>
               <p className="text-gray-text text-base font-light">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
@@ -93,9 +93,9 @@ const Testmonials = () => {
           <SwiperSlide className="rounded-2xl bg-light-background max-w-[450px]">
             <div className="flex flex-col gap-4 p-4">
               <div className="flex justify-start items-center gap-3">
-                <Image src={Star} alt="" className="w-5" />
-                <Image src={Star} alt="" className="w-5" />
-                <Image src={Star} alt="" className="w-5" />
+                <Image src={"/icons/star.svg"} width={100} height={100} className="w-5 h-auto" alt="Star icon" />
+                <Image src={"/icons/star.svg"} width={100} height={100} className="w-5 h-auto" alt="Star icon" />
+                <Image src={"/icons/star.svg"} width={100} height={100} className="w-5 h-auto" alt="Star icon" />
               </div>
               <p className="text-gray-text text-base font-light">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
@@ -118,9 +118,9 @@ const Testmonials = () => {
           <SwiperSlide className="rounded-2xl bg-light-background max-w-[450px]">
             <div className="flex flex-col gap-4 p-4">
               <div className="flex justify-start items-center gap-3">
-                <Image src={Star} alt="" className="w-5" />
-                <Image src={Star} alt="" className="w-5" />
-                <Image src={Star} alt="" className="w-5" />
+                <Image src={"/icons/star.svg"} width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
+                <Image src={"/icons/star.svg"} width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
+                <Image src={"/icons/star.svg"} width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
               </div>
               <p className="text-gray-text text-base font-light">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem

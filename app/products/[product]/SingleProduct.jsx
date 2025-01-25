@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Star from "@/public/icons/star.svg";
+// import Star from "@/public/icons/star.svg";
 import Like from "@/public/icons/Like-1.svg";
 import Quantity from "@/app/Quantity";
 import Button from "@/app/elements/Button";
@@ -43,7 +43,7 @@ const SingleProduct = ({ product }) => {
           {product.description}
         </p>
         <div className="flex items-center gap-1">
-          <Image src={Star} alt="Star icon" />
+          <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
           <p className="text-lg font-bold">{product.rating?.rate} </p>
           <span className="text-gray-text-800">
             ( {product.rating?.count} )

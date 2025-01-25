@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Star from "@/public/icons/star.svg";
+// import Star from "@/public/icons/star.svg";
 import Like from "@/public/icons/Like-1.svg";
 import Button from "@/app/elements/Button";
 import Image from "next/image";
@@ -87,7 +87,7 @@ const Search = ({ showSearch, products = [] }) => {
                     {product.title}
                   </h2>
                   <div className="flex gap-1">
-                    <Image src={Star} alt="Star icon" />
+                    <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
                     <span className="text-base font-medium text-gray-text-800">
                       {product.rating.rate}
                     </span>
