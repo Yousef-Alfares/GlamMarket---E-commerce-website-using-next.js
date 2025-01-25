@@ -1,4 +1,3 @@
-import profileIcon from "@/public/icons/profile.svg";
 import Image from "next/image";
 import Link from "next/link";
 import Options from "../components/profile/Options";
@@ -8,8 +7,8 @@ const links2 = [
   {
     title: "Profile",
     icon: {
-      src: profileIcon,
-      alt: "",
+      src: "/icons/profile.svg",
+      alt: "Profile Icon",
     },
   },
 ];
@@ -27,7 +26,7 @@ const page = () => {
               index !== 0 && "border-t-[0.5px] border-light-border-50"
             }`}
           >
-            <Image src={link.icon.src} alt={link.icon.alt} />
+            <Image src={link.icon.src} alt={link.icon.alt} width={100} height={100} className="w-auto h-auto" />
             <Link
               href="/"
               className={

@@ -1,5 +1,4 @@
 "use client";
-import profileIcon from "@/public/icons/profile.svg";
 import userNameIcon from "@/public/icons/username.svg";
 import emailIcon from "@/public/icons/email-profile.svg";
 import passwordIcon from "@/public/icons/password.svg";
@@ -16,50 +15,50 @@ const links = [
   {
     title: "Name",
     icon: {
-      src: profileIcon,
-      alt: "",
+      src: "/icons/profile.svg",
+      alt: "Profile icon",
     },
   },
   {
     title: "Username",
     icon: {
       src: userNameIcon,
-      alt: "",
+      alt: "UserName Icon",
     },
   },
   {
     title: "Email",
     icon: {
       src: emailIcon,
-      alt: "",
+      alt: "Email Icon",
     },
   },
   {
     title: "Password",
     icon: {
       src: passwordIcon,
-      alt: "",
+      alt: "Password Icon",
     },
   },
   {
     title: "Phone",
     icon: {
       src: callIcon,
-      alt: "",
+      alt: "Call Icon",
     },
   },
   {
     title: "Address",
     icon: {
       src: locationIcon,
-      alt: "",
+      alt: "Address Icon",
     },
   },
   {
     title: "Log Out",
     icon: {
       src: logOutIcon,
-      alt: "",
+      alt: "Log Out Icon",
     },
   },
 ];
@@ -103,7 +102,9 @@ const Options = () => {
             <Image
               src={link.icon.src}
               alt={link.icon.alt}
-              className="opacity-80"
+              width={100}
+              height={100}
+              className="opacity-80 w-auto h-auto"
             />
             <span
               className={

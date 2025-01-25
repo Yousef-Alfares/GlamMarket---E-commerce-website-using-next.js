@@ -2,16 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import Account from "@/public/icons/account.svg";
 import CartIcon from "@/public/icons/Cart.svg";
 import Like from "@/public/icons/Like.svg";
 import Menu from "@/public/icons/Menu.svg";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import Cart from "./nav/Cart";
 import Favorites from "@/app/components/global/nav/Favorites";
-import Register from "@/public/icons/register.svg";
 import Login from "@/public/icons/login.svg";
-import Cookie from "cookie-universal";
 import { useRouter } from "next/navigation";
 import { UserContext } from "@/app/context/UserContext";
 
@@ -22,7 +19,7 @@ const links = [
 ];
 
 const links_2 = [
-  { image: Register, name: "Registe", path: "/" },
+  { image: "/icons/register.svg", name: "Registe", path: "/" },
   { image: Login, name: "Log in", path: "/login" },
 ];
 
@@ -110,9 +107,11 @@ const Nav = () => {
           {!state.user ? (
             <div className="relative">
               <Image
-                src={Account}
+                src={"icons/account.svg"}
+                width={100}
+                height={100}
                 alt="Account icon"
-                className="cursor-pointer"
+                className="cursor-pointer w-auto h-auto"
                 onClick={() => setShowAccount((prev) => !prev)}
               />
 
@@ -128,7 +127,7 @@ const Nav = () => {
                       index !== 0 && "border-t-[0.5px] border-light-border-50"
                     }`}
                   >
-                    <Image src={link.image} alt={link.name + "icon"} />
+                    <Image src={link.image} width={100} height={100} className="w-auto h-auto" alt={link.name + "icon"} />
                     <Link href={link.path}>{link.name}</Link>
                   </li>
                 ))}

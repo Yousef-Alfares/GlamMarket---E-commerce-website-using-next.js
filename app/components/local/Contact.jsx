@@ -1,8 +1,6 @@
 "use client";
 import Button from "@/app/elements/Button";
 import Image from "next/image";
-import Link from "@/public/icons/Link.svg";
-import CallIcon from "@/public/icons/call.svg";
 import LocationIcon from "@/public/icons/Location.svg";
 import EmailIcon from "@/public/icons/email.svg";
 import "./contact.css";
@@ -13,7 +11,7 @@ import LinkIcon from "@/public/icons/LinkIcon";
 const contacts = [
   {
     image: {
-      src: CallIcon,
+      src: "/icons/call.svg",
       alt: "Call icon",
     },
     title: "Phone Number",
@@ -106,6 +104,8 @@ const Contact = () => {
               <Image
                 src={contact.image.src}
                 alt={contact.image.alt}
+                width={100}
+                height={100}
                 className="w-6 h-6 max-w-6"
               />
             </div>

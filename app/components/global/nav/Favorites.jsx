@@ -1,4 +1,3 @@
-// import Star from "@/public/icons/star.svg";
 import Image from "next/image";
 import Button from "@/app/elements/Button";
 import { FavoritesContext } from "@/app/context/FavoritesContext";

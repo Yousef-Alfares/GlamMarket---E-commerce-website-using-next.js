@@ -13,7 +13,6 @@ import "./testimonial.css";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
-// import Star from "@/public/icons/star.svg";
 import Image1 from "@/public/images/Ellipse 74 (1).png";
 
 const Testmonials = () => {
