@@ -1,14 +1,14 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import Star from "@/public/icons/Star.svg";
+import Star from "@/public/icons/star.svg";
 import Like from "@/public/icons/Like-1.svg";
 import Button from "@/app/elements/Button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const addProductToCart = (product) => {
-  const cartFromLocalStorage = localStorage.getItem("cart");
+  const cartFromLocalStorage = typeof window !== 'undefined' ? localStorage.getItem("cart") : null;
 
   let cart;
 

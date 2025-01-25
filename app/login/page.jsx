@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useContext, useEffect, useState } from "react";
 import loginImage from "@/public/images/login-image.svg";
-import BackIcon from "@/public/icons/next (1).svg";
+import BackIcon from "@/public/icons/next-arrow.svg";
 import loginIcon from "@/public/icons/login.svg";
 import Button from "../elements/Button";
 import CheckIcon from "@/public/icons/CheckIcon";

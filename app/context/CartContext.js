@@ -1,62 +1,80 @@
 "use client";
-import { useReducer, createContext } from "react";
+import { useReducer, createContext, useCallback } from "react";
 
-export const CartContext = createContext([]);
+export const CartContext = createContext({
+  state: { cart: [] },
+  dispatch: () => null
+});
+
+const CART_STORAGE_KEY = 'cart';
+
+const getInitialCart = () => {
+  if (typeof window === 'undefined') return [];
+  try {
+    return JSON.parse(localStorage.getItem(CART_STORAGE_KEY)) || [];
+  } catch {
+    return [];
+  }
+};
 
 const initialState = {
-  cart: typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("cart")) || [] : [],
+  cart: getInitialCart()
+};
+
+const updateLocalStorage = (cart) => {
+  if (typeof window !== 'undefined') {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+  }
 };
 
 const reducer = (state, action) => {
-  const filterProducts = state.cart.filter(
-    (productOfCart) => productOfCart.id !== action.payload?.id
-  );
-
-  const alreadyAdded = state.cart.some(
-    (oldProduct) => oldProduct.id == action.payload.product?.id
-  );
-
   switch (action.type) {
-    case "ADD_PRODUCT":
-      if (alreadyAdded) {
-        const updatedCart = state.cart.map((product) => {
-          if (product.id == action.payload.product.id) {
-            return {
-              ...product,
-              quantity: product.quantity + action.payload.product.quantity,
-            };
-          }
-          return product;
-        });
-        localStorage.setItem("cart", JSON.stringify(updatedCart));
-        return {
-          ...state,
-          cart: updatedCart,
-        };
-      }
-      const newCart = [...state.cart, action.payload.product];
-      localStorage.setItem("cart", JSON.stringify(newCart));
-      return {
-        ...state,
-        cart: newCart,
-      };
+    case "ADD_PRODUCT": {
+      const existingProductIndex = state.cart.findIndex(
+        product => product.id === action.payload.product.id
+      );
 
-    case "DELETE_PRODUCT":
-      localStorage.setItem("cart", JSON.stringify(filterProducts));
-      return {
-        ...state,
-        cart: filterProducts,
-      };
+      let newCart;
+      if (existingProductIndex >= 0) {
+        newCart = state.cart.map((product, index) => 
+          index === existingProductIndex 
+            ? {
+                ...product,
+                quantity: product.quantity + action.payload.product.quantity
+              }
+            : product
+        );
+      } else {
+        newCart = [...state.cart, action.payload.product];
+      }
+
+      updateLocalStorage(newCart);
+      return { ...state, cart: newCart };
+    }
+
+    case "DELETE_PRODUCT": {
+      const newCart = state.cart.filter(
+        product => product.id !== action.payload.id
+      );
+      updateLocalStorage(newCart);
+      return { ...state, cart: newCart };
+    }
+
     default:
-      state;
+      return state;
   }
 };
 
 const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const memoizedValue = useCallback({
+    state,
+    dispatch
+  }, [state]);
+
   return (
-    <CartContext.Provider value={{ state, dispatch }}>
+    <CartContext.Provider value={memoizedValue}>
       {children}
     </CartContext.Provider>
   );

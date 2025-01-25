@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import Account from "@/public/icons/Account.svg";
+import Account from "@/public/icons/account.svg";
 import CartIcon from "@/public/icons/Cart.svg";
 import Like from "@/public/icons/Like.svg";
 import Menu from "@/public/icons/Menu.svg";

@@ -4,6 +4,7 @@ import CloseIcon from "@/public/icons/Close.svg";
 import Button from "@/app/elements/Button";
 import { useContext, useState } from "react";
 import { UserContext } from "@/app/context/UserContext";
+import Input from "@/app/elements/Input";
 
 const Option = ({ edit, isOpen = true }) => {
   const { state, dispatch } = useContext(UserContext);
@@ -32,6 +33,7 @@ const Option = ({ edit, isOpen = true }) => {
               : edit[0].toLowerCase()}
           </h2>
           <Image
+          alt="close icon"
             src={CloseIcon}
             onClick={() => {
               handleClose(false);
@@ -41,8 +43,8 @@ const Option = ({ edit, isOpen = true }) => {
         <div className="flex items-center justify-between gap-4 mt-5">
           {edit.map((e, index) => (
             <Input
+            key={index}
               type="text"
-              isValidInput={isValidUserName()}
               defaultValue={
                 edit[0] == "state"
                   ? state.user.address[e.toLowerCase()]
@@ -52,10 +54,7 @@ const Option = ({ edit, isOpen = true }) => {
               }
               label={e}
               ariaLable="Username input"
-              onChange={() => {
-                setUserName(e.target.value);
-                isValidUserName();
-              }}
+            
             />
           ))}
         </div>

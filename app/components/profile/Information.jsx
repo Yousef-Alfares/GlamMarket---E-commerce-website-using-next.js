@@ -8,7 +8,7 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 
 const Information = () => {
-  const user = JSON.parse(localStorage.getItem("userInfo"));
+  const user = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userInfo")) : null;
 
   if (!user) {
     redirect("/login");

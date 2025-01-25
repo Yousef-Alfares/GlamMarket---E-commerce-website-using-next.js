@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import Star from "@/public/icons/Star.svg";
+import Star from "@/public/icons/star.svg";
 import Button from "@/app/elements/Button";
 import Like from "@/public/icons/Like-1.svg";
 import Link from "next/link";

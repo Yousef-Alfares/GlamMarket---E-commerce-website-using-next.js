@@ -24,15 +24,15 @@ const Input = ({
         spellCheck={false}
         className={`w-full h-11 p-2 rounded-lg bg-light-background shadow-3xl outline-amber-500 ${className}`}
         onChange={(e) => {
-          setValidInput(e.target.value.length > 0);
-          onChange(e)
+          setValidInput(defaultValue.length > 0);
+          e.target.value = defaultValue
         }}
       />
       <label className="absolute top-1/2 left-2 -translate-y-1/2 text-gray-text bg-light-background transition-all">
         {label}
       </label>
       <div className="absolute top-1/2 right-3 -translate-y-1/2 transition-all w-4">
-        {validInput ? <CheckIcon checked={isValidInput} /> : null}
+        {false ? <CheckIcon checked={validInput} /> : null}
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Star from "@/public/icons/Star.svg";
+import Star from "@/public/icons/star.svg";
 
 const Services = () => {
   return (

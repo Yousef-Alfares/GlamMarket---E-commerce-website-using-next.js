@@ -1,4 +1,4 @@
-import NextIcon from "@/public/icons/Next (1).svg";
+import NextIcon from "@/public/icons/next-arrow.svg";
 import PrevIcon from "@/public/icons/Prev.svg";
 import Image from "next/image";
 

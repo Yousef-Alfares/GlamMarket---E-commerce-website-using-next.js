@@ -1,5 +1,5 @@
 "use client";
-import Star from "@/public/icons/Star.svg";
+import Star from "@/public/icons/star.svg";
 import Close from "@/public/icons/Close.svg";
 import Image from "next/image";
 import Button from "@/app/elements/Button";

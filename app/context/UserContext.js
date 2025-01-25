@@ -1,43 +1,78 @@
 "use client";
 import Cookie from "cookie-universal";
 import GetUserInfo from "./GetUserInfo";
-const { createContext, useReducer } = require("react");
+import { createContext, useReducer } from "react";
+
+// Action types as constants to prevent typos
+const ActionTypes = {
+  LOGIN_USER: 'LOGIN_USER',
+  USER_INFO: 'USER_INFO', 
+  LOG_OUT: 'LOG_OUT',
+  ERROR: 'ERROR'
+};
 
 const cookie = Cookie();
 
+const getUserFromStorage = () => {
+  if (typeof window === 'undefined') return null;
+  try {
+    return JSON.parse(localStorage.getItem("userInfo")) || null;
+  } catch (error) {
+    console.error('Error reading user info from localStorage:', error);
+    return null;
+  }
+};
+
 const initialState = {
-  user: typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userInfo")) || null : null,
+  user: getUserFromStorage(),
   token: cookie.get("token") || null,
   error: {},
 };
 
-export const UserContext = createContext({});
+export const UserContext = createContext({
+  state: initialState,
+  dispatch: () => null
+});
+
+const updateUserInfo = (info) => {
+  try {
+    localStorage.setItem("userInfo", JSON.stringify(info));
+  } catch (error) {
+    console.error('Error saving user info to localStorage:', error);
+  }
+};
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "LOGIN_USER":
-      cookie.set("token", action.payload.accessToken);
-      GetUserInfo(action.payload.accessToken).then((info) => {
-        localStorage.setItem("userInfo", JSON.stringify(info));
-      });
+    case ActionTypes.LOGIN_USER: {
+      const { accessToken } = action.payload;
+      cookie.set("token", accessToken);
+      
+      // Get user info after login
+      GetUserInfo(accessToken).then(updateUserInfo);
+      
       return {
         ...state,
         user: action.payload,
-        token: action.payload.accessToken,
+        token: accessToken,
       };
-    case "USER_INFO":
-      GetUserInfo(state.token).then((info) => {
-        // if (info.message) {
-        //   cookie.removeAll();
-        //   return;
-        // }
-        localStorage.setItem("userInfo", JSON.stringify(info));
+    }
+
+    case ActionTypes.USER_INFO: {
+      return GetUserInfo(state.token).then((info) => {
+        if (info.message) {
+          cookie.removeAll();
+          return state;
+        }
+        updateUserInfo(info);
         return {
           ...state,
           user: info,
         };
       });
-    case "LOG_OUT":
+    }
+
+    case ActionTypes.LOG_OUT: {
       cookie.removeAll();
       localStorage.removeItem("userInfo");
       return {
@@ -46,13 +81,17 @@ const reducer = (state, action) => {
         token: null,
         error: {},
       };
-    case "ERROR":
+    }
+
+    case ActionTypes.ERROR: {
       return {
         ...state,
         error: action.payload,
       };
+    }
+
     default:
-      return { ...state };
+      return state;
   }
 };
 

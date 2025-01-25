@@ -1,10 +1,38 @@
 "use client";
-const { useReducer, createContext } = require("react");
+import { useReducer, createContext, useCallback } from "react";
 
-export const FavoritesContext = createContext([]);
+// Action types as constants to prevent typos
+const ActionTypes = {
+  ADD_PRODUCT: 'ADD_PRODUCT',
+  DELETE_PRODUCT: 'DELETE_PRODUCT',
+  DELETE_ALL_PRODUCTS: 'DELETE_ALL_PRODUCTS'
+};
+
+export const FavoritesContext = createContext({
+  state: { favorites: [] },
+  dispatch: () => null
+});
+
+const getFavoritesFromStorage = () => {
+  if (typeof window === 'undefined') return [];
+  try {
+    return JSON.parse(localStorage.getItem("favorites")) || [];
+  } catch (error) {
+    console.error('Error reading favorites from localStorage:', error);
+    return [];
+  }
+};
 
 const initialState = {
-  favorites: typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("favorites")) || [] : [],
+  favorites: getFavoritesFromStorage()
+};
+
+const updateLocalStorage = (favorites) => {
+  try {
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  } catch (error) {
+    console.error('Error saving favorites to localStorage:', error);
+  }
 };
 
 const reducer = (state, action) => {
@@ -15,39 +43,43 @@ const reducer = (state, action) => {
   };
 
   const alreadyAdded = state.favorites.some(
-    (oldProduct) => oldProduct.id == action?.payload?.product?.id
+    (oldProduct) => oldProduct.id === action?.payload?.product?.id
   );
 
-  if (action.type == "ADD_PRODUCT" && alreadyAdded) {
-    action.type = "DELETE_PRODUCT";
+  if (action.type === ActionTypes.ADD_PRODUCT && alreadyAdded) {
+    action.type = ActionTypes.DELETE_PRODUCT;
     action.payload.id = action.payload.product.id;
   }
 
   switch (action.type) {
-    case "ADD_PRODUCT":
-      localStorage.setItem(
-        "favorites",
-        JSON.stringify([...state.favorites, action.payload.product])
-      );
+    case ActionTypes.ADD_PRODUCT: {
+      const newFavorites = [...state.favorites, action.payload.product];
+      updateLocalStorage(newFavorites);
       return {
         ...state,
-        favorites: [...state.favorites, action.payload.product],
+        favorites: newFavorites,
       };
+    }
 
-    case "DELETE_PRODUCT":
-      localStorage.setItem("favorites", JSON.stringify(filterProducts()));
+    case ActionTypes.DELETE_PRODUCT: {
+      const filteredFavorites = filterProducts();
+      updateLocalStorage(filteredFavorites);
       return {
         ...state,
-        favorites: filterProducts(),
+        favorites: filteredFavorites,
       };
-    case "DELETE_ALL_PRODUCTS":
-      localStorage.setItem("favorites", JSON.stringify([]));
+    }
+
+    case ActionTypes.DELETE_ALL_PRODUCTS: {
+      updateLocalStorage([]);
       return {
         ...state,
         favorites: [],
       };
+    }
+
     default:
-      state;
+      return state;
   }
 };
 
