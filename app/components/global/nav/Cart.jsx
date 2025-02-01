@@ -1,6 +1,7 @@
 "use client";
 import Close from "@/public/icons/Close.svg";
 import Image from "next/image";
+import starIcon from "@/public/icons/star.svg";
 import Button from "@/app/elements/Button";
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
@@ -57,7 +58,7 @@ const Cart = () => {
                     {cart.title}
                   </h2>
                   <div className="flex gap-1">
-                    <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+                    <Image src={starIcon.src} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
                     <span className="text-base font-medium text-gray-text-800">
                       {cart.rating}
                     </span>
