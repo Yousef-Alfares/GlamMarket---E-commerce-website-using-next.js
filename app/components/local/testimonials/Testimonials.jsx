@@ -10,6 +10,8 @@ import "swiper/css/navigation";
 
 import "./testimonial.css";
 
+import starIcon from "@/public/icons/star.svg";
+
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import Image from "next/image";
@@ -42,9 +44,9 @@ const Testmonials = () => {
           <SwiperSlide className="rounded-2xl bg-light-background max-w-[450px]">
             <div className="flex flex-col gap-4 p-4">
               <div className="flex justify-start items-center gap-3">
-                <img src={"/icons/star.svg"}width={100} height={100} alt="Star Icon" className="w-5 h-auto" />
-                <img src={"/icons/star.svg"}width={100} height={100} alt="Star Icon" className="w-5 h-auto" />
-                <img src={"/icons/star.svg"}width={100} height={100} alt="Star Icon" className="w-5 h-auto" />
+                <Image src={starIcon}width={100} height={100} alt="Star Icon" className="w-5 h-auto" />
+                <Image src={starIcon}width={100} height={100} alt="Star Icon" className="w-5 h-auto" />
+                <Image src={starIcon}width={100} height={100} alt="Star Icon" className="w-5 h-auto" />
               </div>
               <p className="text-gray-text text-base font-light">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
@@ -67,9 +69,9 @@ const Testmonials = () => {
           <SwiperSlide className="rounded-2xl bg-light-background max-w-[450px]">
             <div className="flex flex-col gap-4 p-4">
               <div className="flex justify-start items-center gap-3">
-                <img src={"/icons/star.svg"}width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
-                <img src={"/icons/star.svg"}width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
-                <img src={"/icons/star.svg"}width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
+                <Image src={starIcon}width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
+                <Image src={starIcon}width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
+                <Image src={starIcon}width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
               </div>
               <p className="text-gray-text text-base font-light">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
@@ -92,9 +94,9 @@ const Testmonials = () => {
           <SwiperSlide className="rounded-2xl bg-light-background max-w-[450px]">
             <div className="flex flex-col gap-4 p-4">
               <div className="flex justify-start items-center gap-3">
-                <img src={"/icons/star.svg"}width={100} height={100} className="w-5 h-auto" alt="Star icon" />
-                <img src={"/icons/star.svg"}width={100} height={100} className="w-5 h-auto" alt="Star icon" />
-                <img src={"/icons/star.svg"}width={100} height={100} className="w-5 h-auto" alt="Star icon" />
+                <Image src={starIcon}width={100} height={100} className="w-5 h-auto" alt="Star icon" />
+                <Image src={starIcon}width={100} height={100} className="w-5 h-auto" alt="Star icon" />
+                <Image src={starIcon}width={100} height={100} className="w-5 h-auto" alt="Star icon" />
               </div>
               <p className="text-gray-text text-base font-light">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
@@ -117,9 +119,9 @@ const Testmonials = () => {
           <SwiperSlide className="rounded-2xl bg-light-background max-w-[450px]">
             <div className="flex flex-col gap-4 p-4">
               <div className="flex justify-start items-center gap-3">
-                <img src={"/icons/star.svg"}width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
-                <img src={"/icons/star.svg"}width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
-                <img src={"/icons/star.svg"}width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
+                <Image src={starIcon}width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
+                <Image src={starIcon}width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
+                <Image src={starIcon}width={100} height={100} className="w-5 h-auto" alt="Star Icon" />
               </div>
               <p className="text-gray-text text-base font-light">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem

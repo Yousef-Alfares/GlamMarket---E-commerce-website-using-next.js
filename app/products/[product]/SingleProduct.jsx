@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Quantity from "@/app/Quantity";
 import Button from "@/app/elements/Button";
+import starIcon from "@/public/icons/star.svg";
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "@/app/context/CartContext";
 import { FavoritesContext } from "@/app/context/FavoritesContext";
@@ -41,7 +42,7 @@ const SingleProduct = ({ product }) => {
           {product.description}
         </p>
         <div className="flex items-center gap-1">
-          <img src={"/icons/star.svg"}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+          <Image src={starIcon}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
           <p className="text-lg font-bold">{product.rating?.rate} </p>
           <span className="text-gray-text-800">
             ( {product.rating?.count} )

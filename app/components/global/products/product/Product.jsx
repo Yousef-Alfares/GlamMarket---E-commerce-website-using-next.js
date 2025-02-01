@@ -2,6 +2,7 @@
 import Image from "next/image";
 import Button from "@/app/elements/Button";
 import Link from "next/link";
+import starIcon from "@/public/icons/star.svg";
 import FavoriteIcon from "@/public/icons/FavoriteIcon";
 import { FavoritesContext } from "@/app/context/FavoritesContext";
 import { useContext } from "react";
@@ -51,7 +52,7 @@ const Product = ({ product }) => {
         <span className="absolute w-14 h-14 bg-amber-500 rounded-full top-[57px] right-6 blur-[100px] opacity-55"></span>
         {/* Rate */}
         <div className="flex items-center gap-1">
-          <img src={"/icons/star.svg"}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+          <Image src={starIcon}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
           <span className="text-base font-medium text-gray-text-800">
             {product.rating.rate}
           </span>

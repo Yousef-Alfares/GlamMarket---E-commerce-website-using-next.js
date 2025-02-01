@@ -112,7 +112,7 @@ const Filter = ({ filterByRates, filterByCategories }) => {
               {rate.name !== 1
                 ? Array.from({ length: 5 }).map((nistedRate, nistedIndex) =>
                     rate.name >= nistedIndex + 1 ? (
-                      <img src={"/icons/star.svg"}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+                      <Image src={starIcon}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
                     ) : (
                       <Image src={"/icons/silver-star.svg"} width={100} height={100} className="w-auto h-auto" alt="Silver star icon" />
                     )

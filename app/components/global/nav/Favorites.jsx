@@ -3,6 +3,7 @@ import Button from "@/app/elements/Button";
 import { FavoritesContext } from "@/app/context/FavoritesContext";
 import { useContext } from "react";
 import FavoriteIcon from "@/public/icons/FavoriteIcon";
+import starIcon from "@/public/icons/star.svg";
 
 const Favorites = () => {
   const { state, dispatch } = useContext(FavoritesContext);
@@ -44,7 +45,7 @@ const Favorites = () => {
                     {favorite.title}
                   </h2>
                   <div className="flex gap-1">
-                    <img src={"/icons/star.svg"}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+                    <Image src={starIcon}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
                     <span className="text-base font-medium text-gray-text-800">
                       {favorite.rating}
                     </span>
