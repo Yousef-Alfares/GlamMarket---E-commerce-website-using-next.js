@@ -42,7 +42,7 @@ const SingleProduct = ({ product }) => {
           {product.description}
         </p>
         <div className="flex items-center gap-1">
-          <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+          <StarIcon className="w-auto h-auto" />
           <p className="text-lg font-bold">{product.rating?.rate} </p>
           <span className="text-gray-text-800">
             ( {product.rating?.count} )

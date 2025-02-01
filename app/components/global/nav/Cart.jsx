@@ -2,6 +2,7 @@
 import Close from "@/public/icons/Close.svg";
 import Image from "next/image";
 import Button from "@/app/elements/Button";
+import StarIcon from "@/public/icons/StarIcon"
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import FavoriteIcon from "@/public/icons/FavoriteIcon";
@@ -57,7 +58,7 @@ const Cart = () => {
                     {cart.title}
                   </h2>
                   <div className="flex gap-1">
-                    <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+                    <StarIcon className="w-auto h-auto" />
                     <span className="text-base font-medium text-gray-text-800">
                       {cart.rating}
                     </span>

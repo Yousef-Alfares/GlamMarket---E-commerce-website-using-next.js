@@ -87,7 +87,7 @@ const Search = ({ showSearch, products = [] }) => {
                     {product.title}
                   </h2>
                   <div className="flex gap-1">
-                    <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+                    <StarIcon className="w-auto h-auto" />
                     <span className="text-base font-medium text-gray-text-800">
                       {product.rating.rate}
                     </span>
