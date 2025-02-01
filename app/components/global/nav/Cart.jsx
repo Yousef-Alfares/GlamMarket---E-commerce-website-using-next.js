@@ -57,7 +57,7 @@ const Cart = () => {
                     {cart.title}
                   </h2>
                   <div className="flex gap-1">
-                    <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+                    <img src={"/icons/star.svg"}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
                     <span className="text-base font-medium text-gray-text-800">
                       {cart.rating}
                     </span>

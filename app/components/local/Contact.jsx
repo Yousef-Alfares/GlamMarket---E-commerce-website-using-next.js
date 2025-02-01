@@ -46,7 +46,7 @@ const Contact = () => {
   const isValidForm = !isValidName || !isValidEmail || !isValidMessage;
 
   return (
-    <div className="mx-auto flex-between flex-col md:flex-row gap-20 container px-3 md:px-7 xl:px-0 xl:max-w-[1080px] mt-48 relative">
+    <div className="mx-auto flex-between flex-col md:flex-row gap-20 container px-3 md:px-7 xl:px-0 xl:max-w-[1080px] mt-48 relative overflow-hidden">
       <span className="absolute w-36 h-36 bg-amber-500 rounded-full top-0 -right-36 blur-[140px] opacity-30 -z-10"></span>
       <form action="" className="flex flex-col gap-6 w-full">
         <Input

@@ -6,7 +6,7 @@ const Products = async () => {
   const products = await res.json();
 
   return (
-    <div className="mx-auto flex-between flex-col container px-3 md:px-[88px] xl:px-0 xl:max-w-[1080px] mt-32 relative products">
+    <div className="mx-auto flex-between flex-col container px-3 md:px-[88px] xl:px-0 xl:max-w-[1080px] mt-32 relative products overflow-hidden">
       <span className="absolute w-36 h-36 bg-amber-500 rounded-full top-0 -right-36 blur-[140px] opacity-30"></span>
       <div className="text-center">
         <h2 className="text-3xl text-gray-title font-bold">Our Products</h2>

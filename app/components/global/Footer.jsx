@@ -8,7 +8,7 @@ import { redirect } from "next/navigation";
 const Footer = () => {
   return (
     <div className="mx-auto flex-between flex-col items-start gap-10 md:flex-row md:gap-0 container px-3 md:px-7 xl:px-0 xl:max-w-[1080px] mt-48 relative mb-12">
-      <span className="w-[300vw] h-[1px] bg-light-border absolute -left-60 -top-12"></span>
+      <span className="w-screen h-[1px] bg-light-border absolute -left-60 -top-12"></span>
 
       <div className="flex flex-col items-start justify-center gap-1">
         <h1 className="text-[22px] font-semibold text-amber-500">GlamMarket</h1>
