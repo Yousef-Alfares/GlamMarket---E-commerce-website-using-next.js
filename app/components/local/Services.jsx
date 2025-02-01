@@ -15,7 +15,7 @@ const Services = () => {
       <div className="grid grid-cols-4 grid-rows-4 lg:grid-rows-2 gap-8 mt-24">
         <div className="w-fit flex items-center justify-between gap-4 p-3 bg-light-background shadow-3xl rounded-xl col-span-4 sm:col-span-2">
           <div className="p-4 bg-light-text rounded-xl">
-            <Image src={starIcon}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+            <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
           </div>
           <div>
             <h3 className="text-xl text-gray-t font-bold">Title of Services</h3>
@@ -26,7 +26,7 @@ const Services = () => {
         </div>
         <div className="w-fit flex items-center justify-between gap-4 p-3 bg-light-background rounded-xl relative z-10 col-span-4 sm:col-span-2 sm:col-start-3 sm:row-start-2 lg:col-start-3 lg:row-start-1">
           <div className="p-4 bg-light-text rounded-xl">
-          <Image src={starIcon}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+          <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
           </div>
           <div>
             <h3 className="text-xl text-gray-text-800 font-bold">
@@ -39,7 +39,7 @@ const Services = () => {
         </div>
         <div className="w-fit flex items-center justify-between gap-4 p-3 bg-light-background rounded-xl relative z-10 col-span-4 sm:col-span-2 sm:col-start-1 sm:row-start-3 lg:col-start-1 lg:row-start-2">
           <div className="p-4 bg-light-text rounded-xl">
-          <Image src={starIcon}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+          <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
           </div>
           <div>
             <h3 className="text-xl text-gray-text-800 font-bold">
@@ -52,7 +52,7 @@ const Services = () => {
         </div>
         <div className="w-fit flex items-center justify-between gap-4 p-3 bg-light-background rounded-xl relative z-10 col-span-4 sm:col-span-2 sm:col-start-3 sm:row-start-4 lg:col-start-3 lg:row-start-2">
           <div className="p-4 bg-light-text rounded-xl">
-            <Image src={starIcon}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+            <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
           </div>
           <div>
             <h3 className="text-xl text-gray-text-800 font-bold">

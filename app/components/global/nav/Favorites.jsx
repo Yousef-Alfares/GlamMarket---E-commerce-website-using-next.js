@@ -45,7 +45,7 @@ const Favorites = () => {
                     {favorite.title}
                   </h2>
                   <div className="flex gap-1">
-                    <Image src={starIcon}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+                    <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
                     <span className="text-base font-medium text-gray-text-800">
                       {favorite.rating}
                     </span>

@@ -52,7 +52,7 @@ const Product = ({ product }) => {
         <span className="absolute w-14 h-14 bg-amber-500 rounded-full top-[57px] right-6 blur-[100px] opacity-55"></span>
         {/* Rate */}
         <div className="flex items-center gap-1">
-          <Image src={starIcon}width={100} height={100} className="w-auto h-auto" alt="Star icon" />
+          <Image src={"/icons/star.svg"} width={100} height={100} className="w-auto h-auto" alt="Star icon" />
           <span className="text-base font-medium text-gray-text-800">
             {product.rating.rate}
           </span>
