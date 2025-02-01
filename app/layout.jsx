@@ -17,6 +17,14 @@ export const metadata = {
     "Welcome to GlamMarket We're more than just a clothing store, we're your style destination",
 };
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  minimumScale: 1,
+  userScalable: false,
+};
+
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">

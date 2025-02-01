@@ -39,7 +39,7 @@ const Testmonials = () => {
           loop={true}
           navigation={true}
           modules={[Autoplay, Navigation]}
-          className="mySwiper mt-10"
+          className="mySwiper mt-10 overflow-hidden"
         >
           <SwiperSlide className="rounded-2xl bg-light-background max-w-[450px]">
             <div className="flex flex-col gap-4 p-4">
