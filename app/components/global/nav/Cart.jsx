@@ -1,7 +1,7 @@
 "use client";
 import Close from "@/public/icons/Close.svg";
 import Image from "next/image";
-import starIcon from "@/public/icons/star.svg";
+import starIcon from "/public/icons/star.svg";
 import Button from "@/app/elements/Button";
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
