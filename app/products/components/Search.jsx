@@ -6,6 +6,8 @@ import Like from "@/public/icons/Like-1.svg";
 import Button from "@/app/elements/Button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import StarIcon from "@/public/icons/StarIcon"
+
 
 const addProductToCart = (product) => {
   const cartFromLocalStorage = typeof window !== 'undefined' ? localStorage.getItem("cart") : null;

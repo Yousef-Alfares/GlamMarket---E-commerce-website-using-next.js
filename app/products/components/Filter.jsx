@@ -2,6 +2,7 @@
 import Image from "next/image";
 // 
 import silverStarIcon from "@/public/icons/silver-star.svg";
+import StarIcon from "@/public/icons/StarIcon"
 import { useEffect, useState } from "react";
 
 const allRates = [
