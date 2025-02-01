@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 
 import "./testimonial.css";
 
-import starIcon from "@/public/icons/star.svg";
+
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";

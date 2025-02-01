@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Quantity from "@/app/Quantity";
 import Button from "@/app/elements/Button";
-import starIcon from "@/public/icons/star.svg";
+
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "@/app/context/CartContext";
 import { FavoritesContext } from "@/app/context/FavoritesContext";

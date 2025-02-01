@@ -2,7 +2,7 @@
 import Image from "next/image";
 import Button from "@/app/elements/Button";
 import Link from "next/link";
-import starIcon from "@/public/icons/star.svg";
+
 import FavoriteIcon from "@/public/icons/FavoriteIcon";
 import { FavoritesContext } from "@/app/context/FavoritesContext";
 import { useContext } from "react";

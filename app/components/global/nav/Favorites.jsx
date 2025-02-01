@@ -3,7 +3,7 @@ import Button from "@/app/elements/Button";
 import { FavoritesContext } from "@/app/context/FavoritesContext";
 import { useContext } from "react";
 import FavoriteIcon from "@/public/icons/FavoriteIcon";
-import starIcon from "@/public/icons/star.svg";
+
 
 const Favorites = () => {
   const { state, dispatch } = useContext(FavoritesContext);

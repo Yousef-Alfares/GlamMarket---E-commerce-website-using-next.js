@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-// import starIcon from "@/public/icons/star.svg";
+// 
 import silverStarIcon from "@/public/icons/silver-star.svg";
 import { useEffect, useState } from "react";
 
