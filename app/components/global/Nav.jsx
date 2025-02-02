@@ -11,6 +11,8 @@ import Favorites from "@/app/components/global/nav/Favorites";
 import Login from "@/public/icons/login.svg";
 import { useRouter } from "next/navigation";
 import { UserContext } from "@/app/context/UserContext";
+import RegisterIcon from "@/public/icons/RegisterIcon";
+import AccountIcon from "@/public/icons/AccountIcon";
 
 const links = [
   { name: "Home", path: "/" },
@@ -18,9 +20,9 @@ const links = [
   { name: "Products", path: "/products" },
 ];
 
-const links_2 = [
-  { image: "/icons/register.svg", name: "Registe", path: "/" },
-  { image: Login, name: "Log in", path: "/login" },
+const accountLinks = [
+  { image: <RegisterIcon className="w-auto h-auto" /> , name: "Register", path: "/" },
+  { image: <Image src={Login} width={100} height={100} className="w-auto h-auto" alt={"Login icon"} />, name: "Log in", path: "/login" },
 ];
 
 const Nav = () => {
@@ -106,13 +108,8 @@ const Nav = () => {
           </div>
           {!state.user ? (
             <div className="relative">
-              <Image
-                src={"icons/account.svg"}
-                width={100}
-                height={100}
-                alt="Account icon"
+              <AccountIcon 
                 className="cursor-pointer w-auto h-auto"
-                onClick={() => setShowAccount((prev) => !prev)}
               />
 
               <ul
@@ -120,14 +117,14 @@ const Nav = () => {
                   showAccount && "opacity-100"
                 }`}
               >
-                {links_2.map((link, index) => (
+                {accountLinks.map((link, index) => (
                   <li
                     key={index}
                     className={`flex items-center gap-2 py-[10px] px-5 hover:bg-light-text hover:cursor-pointer ${
                       index !== 0 && "border-t-[0.5px] border-light-border-50"
                     }`}
                   >
-                    <Image src={link.image} width={100} height={100} className="w-auto h-auto" alt={link.name + "icon"} />
+                    {link.image}
                     <Link href={link.path}>{link.name}</Link>
                   </li>
                 ))}
