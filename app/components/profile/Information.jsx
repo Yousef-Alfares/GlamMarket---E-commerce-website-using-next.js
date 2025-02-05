@@ -5,19 +5,34 @@ import callIcon from "@/public/icons/call-profile.svg";
 import locationIcon from "@/public/icons/location-profile.svg";
 import profilePhoto from "@/public/images/User-image.png";
 import Image from "next/image";
-import { redirect } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
+import { UserContext } from "@/app/context/UserContext";
+import { useContext, useEffect } from "react";
 
 const Information = () => {
-  const user = typeof window !== 'undefined' ? JSON.parse(localStorage.getItem("userInfo")) : null;
+  const router = useRouter();
+
+  const { state } = useContext(UserContext);
+  const user = state.user;
+
+  useEffect(() => {
+    if (!user) {
+      router.push("/login");
+      return;
+    }
+  }, [user, router]);
 
   if (!user) {
-    redirect("/login");
+    return null;
   }
+
+  const image = user.image || profilePhoto;
 
   return (
     <div className="mx-auto md:mx-0">
       <Image
-        src={user.image}
+        src={image}
+        priority
         alt="Profile photo"
         width={150}
         height={150}
@@ -33,15 +48,15 @@ const Information = () => {
             alt="Username icon"
             className="opacity-50"
           />
-          <span className="text-gray-text">{user.username}</span>
+          {user.username}
         </li>
         <li className={`flex items-center gap-3`}>
           <Image src={emailIcon} alt="Email icon" className="opacity-50" />
-          <span className="text-gray-text">{user.email}</span>
+          {user.email}
         </li>
         <li className={`flex items-center gap-3`}>
           <Image src={callIcon} alt="Call icon" className="opacity-50" />
-          <span className="text-gray-text">{user.phone}</span>
+          {user.phone}
         </li>
         <li className={`flex items-center gap-3`}>
           <Image
@@ -49,7 +64,7 @@ const Information = () => {
             alt="Username icon"
             className="opacity-50"
           />
-          <span className="text-gray-text">{`${user.address.state}, ${user.address.city}, ${user.address.country}`}</span>
+          {`${user.address.state}, ${user.address.city}, ${user.address.country}`}
         </li>
       </ul>
     </div>

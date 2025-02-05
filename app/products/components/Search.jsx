@@ -1,16 +1,15 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-// import Star from "@/public/icons/star.svg";
 import Like from "@/public/icons/Like-1.svg";
 import Button from "@/app/elements/Button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import StarIcon from "@/public/icons/StarIcon"
-
+import StarIcon from "@/public/icons/StarIcon";
 
 const addProductToCart = (product) => {
-  const cartFromLocalStorage = typeof window !== 'undefined' ? localStorage.getItem("cart") : null;
+  const cartFromLocalStorage =
+    typeof window !== "undefined" ? localStorage.getItem("cart") : null;
 
   let cart;
 
@@ -69,6 +68,7 @@ const Search = ({ showSearch, products = [] }) => {
         <div className="h-[390px] rounded-tl-[20px] overflow-auto custom-scroll overscroll-none">
           {filterOfSerach.map((product, index) => (
             <div
+              key={index}
               className={`flex relative overflow-hidden}`}
               onClick={() => route.push(`/products/${product.id}`)}
             >

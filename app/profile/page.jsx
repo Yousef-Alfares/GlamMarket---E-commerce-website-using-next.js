@@ -26,7 +26,13 @@ const page = () => {
               index !== 0 && "border-t-[0.5px] border-light-border-50"
             }`}
           >
-            <Image src={link.icon.src} alt={link.icon.alt} width={100} height={100} className="w-auto h-auto" />
+            <Image
+              src={link.icon.src}
+              alt={link.icon.alt}
+              width={100}
+              height={100}
+              className="w-auto h-auto"
+            />
             <Link
               href="/"
               className={

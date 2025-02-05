@@ -1,6 +1,5 @@
 import Image from "next/image";
-import StarIcon from "@/public/icons/StarIcon"
-
+import StarIcon from "@/public/icons/StarIcon";
 
 const Services = () => {
   return (
@@ -27,7 +26,7 @@ const Services = () => {
         </div>
         <div className="w-fit flex items-center justify-between gap-4 p-3 bg-light-background rounded-xl relative z-10 col-span-4 sm:col-span-2 sm:col-start-3 sm:row-start-2 lg:col-start-3 lg:row-start-1">
           <div className="p-4 bg-light-text rounded-xl">
-          <StarIcon className="w-auto h-auto" />
+            <StarIcon className="w-auto h-auto" />
           </div>
           <div>
             <h3 className="text-xl text-gray-text-800 font-bold">
@@ -40,7 +39,7 @@ const Services = () => {
         </div>
         <div className="w-fit flex items-center justify-between gap-4 p-3 bg-light-background rounded-xl relative z-10 col-span-4 sm:col-span-2 sm:col-start-1 sm:row-start-3 lg:col-start-1 lg:row-start-2">
           <div className="p-4 bg-light-text rounded-xl">
-          <StarIcon className="w-auto h-auto" />
+            <StarIcon className="w-auto h-auto" />
           </div>
           <div>
             <h3 className="text-xl text-gray-text-800 font-bold">

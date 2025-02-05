@@ -4,10 +4,11 @@
 
 .products .swiper-slide {
   /* text-align: center; */
+  height: auto !important;
   font-size: 18px;
 }
 
-.products .swiper-slide Image{
+.products .swiper-slide Image {
   display: block;
 
   object-fit: contain;

@@ -1,8 +1,6 @@
 "use client";
 import Image from "next/image";
-// 
-import silverStarIcon from "@/public/icons/silver-star.svg";
-import StarIcon from "@/public/icons/StarIcon"
+import StarIcon from "@/public/icons/StarIcon";
 import { useEffect, useState } from "react";
 
 const allRates = [
@@ -115,7 +113,13 @@ const Filter = ({ filterByRates, filterByCategories }) => {
                     rate.name >= nistedIndex + 1 ? (
                       <StarIcon className="w-auto h-auto" />
                     ) : (
-                      <Image src={"/icons/silver-star.svg"} width={100} height={100} className="w-auto h-auto" alt="Silver star icon" />
+                      <Image
+                        src={"/icons/silver-star.svg"}
+                        width={100}
+                        height={100}
+                        className="w-auto h-auto"
+                        alt="Silver star icon"
+                      />
                     )
                   )
                 : "All"}

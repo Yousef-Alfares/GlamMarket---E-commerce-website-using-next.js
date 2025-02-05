@@ -7,29 +7,40 @@ import "./contact.css";
 import Input from "@/app/elements/Input";
 import { useState } from "react";
 import LinkIcon from "@/public/icons/LinkIcon";
+import CallIcon from "@/public/icons/CallIcon";
 
 const contacts = [
   {
-    image: {
-      src: "/icons/call.svg",
-      alt: "Call icon",
-    },
+    image: <CallIcon className="w-6 h-6 max-w-6" />,
+
     title: "Phone Number",
     description: "+963 987 654 321",
   },
   {
-    image: {
-      src: EmailIcon,
-      alt: "Email Icon",
-    },
+    image: (
+      <Image
+        src={EmailIcon}
+        alt="Email icon"
+        width={100}
+        height={100}
+        className="w-6 h-6 max-w-6"
+      />
+    ),
+
     title: "Email",
     description: "contact@GlamMarket.com",
   },
   {
-    image: {
-      src: LocationIcon,
-      alt: "Location icon",
-    },
+    image: (
+      <Image
+        src={LocationIcon}
+        alt="Location icon"
+        width={100}
+        height={100}
+        className="w-6 h-6 max-w-6"
+      />
+    ),
+
     title: "Location",
     description: "Damascus, Syria",
   },
@@ -52,10 +63,14 @@ const Contact = () => {
         <Input
           type="text"
           isValidInput={isValidName}
-          label={"Your Name"}
-          ariaLable="Your Name input"
+          label="Your Name"
+          ariaLabel="Your Name input"
+          placeholder="Enter your name"
+          required
+          minLength={3}
           onChange={(e) => {
-            setIsValidName(e.target.value.length > 2);
+            const value = e.target.value.trim();
+            setIsValidName(value.length >= 3 && /^[a-zA-Z\s]*$/.test(value));
           }}
         />
         <Input
@@ -100,15 +115,7 @@ const Contact = () => {
             }`}
             key={index}
           >
-            <div className="p-4 rounded-xl bg-light-text">
-              <Image
-                src={contact.image.src}
-                alt={contact.image.alt}
-                width={100}
-                height={100}
-                className="w-6 h-6 max-w-6"
-              />
-            </div>
+            <div className="p-4 rounded-xl bg-light-text">{contact.image}</div>
             <div>
               <h5 className="text-xl font-medium">{contact.title}</h5>
               <p className="text-base font-light text-gray-text mt-[5px]">

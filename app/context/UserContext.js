@@ -5,20 +5,20 @@ import { createContext, useReducer } from "react";
 
 // Action types as constants to prevent typos
 const ActionTypes = {
-  LOGIN_USER: 'LOGIN_USER',
-  USER_INFO: 'USER_INFO', 
-  LOG_OUT: 'LOG_OUT',
-  ERROR: 'ERROR'
+  LOGIN_USER: "LOGIN_USER",
+  USER_INFO: "USER_INFO",
+  LOG_OUT: "LOG_OUT",
+  ERROR: "ERROR",
 };
 
 const cookie = Cookie();
 
 const getUserFromStorage = () => {
-  if (typeof window === 'undefined') return null;
+  if (typeof window === "undefined") return null;
   try {
     return JSON.parse(localStorage.getItem("userInfo")) || null;
   } catch (error) {
-    console.error('Error reading user info from localStorage:', error);
+    console.error("Error reading user info from localStorage:", error);
     return null;
   }
 };
@@ -31,14 +31,14 @@ const initialState = {
 
 export const UserContext = createContext({
   state: initialState,
-  dispatch: () => null
+  dispatch: () => null,
 });
 
 const updateUserInfo = (info) => {
   try {
     localStorage.setItem("userInfo", JSON.stringify(info));
   } catch (error) {
-    console.error('Error saving user info to localStorage:', error);
+    console.error("Error saving user info to localStorage:", error);
   }
 };
 
@@ -47,10 +47,10 @@ const reducer = (state, action) => {
     case ActionTypes.LOGIN_USER: {
       const { accessToken } = action.payload;
       cookie.set("token", accessToken);
-      
+
       // Get user info after login
       GetUserInfo(accessToken).then(updateUserInfo);
-      
+
       return {
         ...state,
         user: action.payload,

@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Quantity from "@/app/Quantity";
 import Button from "@/app/elements/Button";
-import StarIcon from "@/public/icons/StarIcon"
-import { useContext, useEffect, useState } from "react";
+import StarIcon from "@/public/icons/StarIcon";
+import { useContext, useState } from "react";
 import { CartContext } from "@/app/context/CartContext";
 import { FavoritesContext } from "@/app/context/FavoritesContext";
 import FavoriteIcon from "@/public/icons/FavoriteIcon";

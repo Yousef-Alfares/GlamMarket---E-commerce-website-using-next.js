@@ -108,7 +108,11 @@ const page = () => {
           </div>
         </div>
       </div>
-      <AllProducts currentProducts={currentProducts} loading={loading} />
+      <AllProducts
+        currentProducts={currentProducts}
+        loading={loading}
+        productsPerPage={productsPerPage}
+      />
       <Pagination
         productsPerPage={productsPerPage}
         totalProducts={products.length}

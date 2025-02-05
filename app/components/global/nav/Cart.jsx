@@ -2,7 +2,7 @@
 import Close from "@/public/icons/Close.svg";
 import Image from "next/image";
 import Button from "@/app/elements/Button";
-import StarIcon from "@/public/icons/StarIcon"
+import StarIcon from "@/public/icons/StarIcon";
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 import FavoriteIcon from "@/public/icons/FavoriteIcon";

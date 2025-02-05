@@ -34,6 +34,7 @@ const Pagination = ({
               {/* Current: "z-10 bg-indigo-600 text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600", Default: "text-gray-900  hover:bg-gray-50 focus:outline-offset-0" */}
               {pageNumbers.map((number) => (
                 <span
+                  key={number}
                   aria-current="page"
                   className={`relative z-10 inline-flex items-center px-3 py-2 rounded-lg text-sm text-amber-500 font-semibold border hover:bg-gray-200 hover:border-light-border transition-colors cursor-pointer ${
                     number == currentPage

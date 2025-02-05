@@ -14,15 +14,31 @@ import { UserContext } from "@/app/context/UserContext";
 import RegisterIcon from "@/public/icons/RegisterIcon";
 import AccountIcon from "@/public/icons/AccountIcon";
 
-const links = [
+const navLinks = [
   { name: "Home", path: "/" },
   { name: "About", path: "/about" },
   { name: "Products", path: "/products" },
 ];
 
 const accountLinks = [
-  { image: <RegisterIcon className="w-auto h-auto" /> , name: "Register", path: "/" },
-  { image: <Image src={Login} width={100} height={100} className="w-auto h-auto" alt={"Login icon"} />, name: "Log in", path: "/login" },
+  {
+    image: <RegisterIcon className="w-auto h-auto" />,
+    name: "Register",
+    path: "/",
+  },
+  {
+    image: (
+      <Image
+        src={Login}
+        width={100}
+        height={100}
+        className="w-auto h-auto"
+        alt={"Login icon"}
+      />
+    ),
+    name: "Log in",
+    path: "/login",
+  },
 ];
 
 const Nav = () => {
@@ -41,7 +57,7 @@ const Nav = () => {
         <h1 className="text-[28px] font-bold text-amber-500 ">GlamMarket</h1>
         {/* Desktop */}
         <ul className="gap-[85px] text-gray-text hidden md:flex">
-          {links.map((link, index) => (
+          {navLinks.map((link, index) => (
             <li key={index}>
               <Link href={link.path}>{link.name}</Link>
             </li>
@@ -61,7 +77,7 @@ const Nav = () => {
               showLinks ? "flex" : "hidden"
             }`}
           >
-            {links.map((link, index) => (
+            {navLinks.map((link, index) => (
               <li
                 key={index}
                 className={`py-[10px] px-5 hover:bg-light-text hover:cursor-pointer bg-light-background ${
@@ -108,27 +124,28 @@ const Nav = () => {
           </div>
           {!state.user ? (
             <div className="relative">
-              <AccountIcon 
+              <AccountIcon
                 className="cursor-pointer w-auto h-auto"
+                onClick={() => setShowAccount((prev) => !prev)}
               />
 
-              <ul
-                className={`bg-light-background flex flex-col text-gray-text w-36 rounded-[20px] overflow-hidden absolute top-9 right-3 shadow-3xl opacity-0 transition delay-100 ease-in-out  ${
-                  showAccount && "opacity-100"
-                }`}
-              >
-                {accountLinks.map((link, index) => (
-                  <li
-                    key={index}
-                    className={`flex items-center gap-2 py-[10px] px-5 hover:bg-light-text hover:cursor-pointer ${
-                      index !== 0 && "border-t-[0.5px] border-light-border-50"
-                    }`}
-                  >
-                    {link.image}
-                    <Link href={link.path}>{link.name}</Link>
-                  </li>
-                ))}
-              </ul>
+              {showAccount ? (
+                <ul
+                  className={`bg-light-background flex flex-col text-gray-text w-36 rounded-[20px] overflow-hidden absolute top-9 right-3 shadow-3xl transition delay-100 ease-in-out`}
+                >
+                  {accountLinks.map((link, index) => (
+                    <li
+                      key={index}
+                      className={`flex items-center gap-2 py-[10px] px-5 hover:bg-light-text hover:cursor-pointer ${
+                        index !== 0 && "border-t-[0.5px] border-light-border-50"
+                      }`}
+                    >
+                      {link.image}
+                      <Link href={link.path}>{link.name}</Link>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           ) : (
             <div>
