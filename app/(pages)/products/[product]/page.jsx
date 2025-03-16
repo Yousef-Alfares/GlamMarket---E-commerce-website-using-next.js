@@ -1,6 +1,6 @@
 "use client";
 
-import SliderProducts from "@/app/components/products/product/SliderProducts";
+import SliderProducts from "@/app/(pages)/components/products/product/SliderProducts";
 
 import { useEffect, useState } from "react";
 

@@ -1,4 +1,4 @@
-import Product from "@/app/components/products/product/Product";
+import Product from "@/app/(pages)/components/products/product/Product";
 
 const ProductList = ({ currentProducts, loading, productsPerPage }) => {
   if (loading) {
