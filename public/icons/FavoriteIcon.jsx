@@ -1,4 +1,4 @@
-import { FavoritesContext } from "@/app/context/FavoritesContext";
+import { FavoritesContext } from "@/app/(shared)/context/FavoritesContext";
 import { useContext } from "react";
 
 const FavoriteIcon = ({ id, onClick }) => {
